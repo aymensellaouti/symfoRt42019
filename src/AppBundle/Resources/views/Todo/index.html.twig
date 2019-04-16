@@ -14,6 +14,11 @@
     {{ message }}
 </div>
 {% endfor %}
+{% for message in app.session.flashbag.get('error')%}
+    <div class="alert alert-danger">
+        {{ message }}
+    </div>
+{% endfor %}
 <ol class="list list-group">
 {% for cle,valeur in app.session.get('mesTodos')%}
    <li class="list list-group-item">
